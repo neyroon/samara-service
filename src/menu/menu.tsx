@@ -42,10 +42,7 @@ const navigation = [
     },
 ];
 
-export const Menu: FC<MenuProps> = ({
-    textColor = '#fff',
-    burgerColor = '#1a1a1a',
-}) => {
+export const Menu: FC<MenuProps> = ({ textColor = '#fff', burgerColor = '#1a1a1a' }) => {
     const isMobile = useIsMobile();
     const [isBurgerActive, setIsBurgerActive] = useState(false);
 
@@ -61,24 +58,20 @@ export const Menu: FC<MenuProps> = ({
                     <NavigationContainer>
                         {navigation.map((nav) => (
                             <Li key={nav.link}>
-                                <NavigationLink
-                                    color="#000"
-                                    key={nav.title}
-                                    to={nav.link}
-                                >
+                                <NavigationLink color='#000' key={nav.title} to={nav.link}>
                                     {nav.title}
                                 </NavigationLink>
                             </Li>
                         ))}
                         <LiPhone>
-                            <PhoneLink color="#ed6662" />
+                            <PhoneLink color='#ed6662' />
                         </LiPhone>
                     </NavigationContainer>
                 </NavigationMobile>
             )}
             <div>
-                <LogoNavigationLink color={textColor} to="/">
-                    <StyledImage src={Logo} alt="Логотип" loading="lazy" />
+                <LogoNavigationLink color={textColor} to='/'>
+                    <StyledImage src={Logo} alt='Логотип' loading='lazy' />
                     <LogoTextContainer>
                         Работает
                         <LogoTextSmall>Ремонт техники</LogoTextSmall>
@@ -89,11 +82,7 @@ export const Menu: FC<MenuProps> = ({
                 <NavigationContainer>
                     {navigation.map((nav) => (
                         <Li key={nav.link}>
-                            <NavigationLink
-                                color={textColor}
-                                key={nav.title}
-                                to={nav.link}
-                            >
+                            <NavigationLink color={textColor} key={nav.title} to={nav.link}>
                                 {nav.title}
                             </NavigationLink>
                         </Li>
@@ -103,10 +92,7 @@ export const Menu: FC<MenuProps> = ({
             {isMobile ? (
                 <>
                     <PhoneLink color={textColor} />
-                    <BurgerContainer
-                        onClick={onBurgerClick}
-                        active={isBurgerActive}
-                    >
+                    <BurgerContainer onClick={onBurgerClick} active={isBurgerActive}>
                         <BurgerElementTop color={burgerColor} />
                         <BurgerElementMiddle color={burgerColor} />
                         <BurgerElementBottom color={burgerColor} />

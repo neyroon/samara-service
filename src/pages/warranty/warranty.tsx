@@ -1,11 +1,6 @@
 import { Breadcrumbs } from '../../breadcrumbs';
 import { CallbackForm } from '../../callback';
-import {
-    MainContainer,
-    PageParagraph,
-    PageTitle,
-    UnderlineText,
-} from '../../common.styles';
+import { MainContainer, PageParagraph, PageTitle, UnderlineText } from '../../common.styles';
 import { Footer } from '../../footer';
 import { Menu } from '../../menu';
 import {
@@ -23,13 +18,13 @@ export const Warranty = () => {
     return (
         <>
             <StyledHeader>
-                <Menu textColor="#fff" burgerColor="#fff" />
+                <Menu textColor='#fff' burgerColor='#fff' />
                 <Hero>
-                    <Breadcrumbs text="Гарантия" />
+                    <Breadcrumbs text='Гарантия' />
                     <PageTitle>Гарантия</PageTitle>
                     <PageParagraph>
-                        Мы <UnderlineText>предоставляем гарантию</UnderlineText>{' '}
-                        на работу и запчасти сроком до 1 года.
+                        Мы <UnderlineText>предоставляем гарантию</UnderlineText> на работу и
+                        запчасти сроком до 1 года.
                     </PageParagraph>
                 </Hero>
             </StyledHeader>
@@ -48,8 +43,8 @@ export const Warranty = () => {
                         </WarrantyContainer>
                     </WarrantyList>
                     <Text>
-                        При наступлении гарантийного случая мы в срочном порядке
-                        бесплатно устраним неисправность
+                        При наступлении гарантийного случая мы в срочном порядке бесплатно устраним
+                        неисправность
                     </Text>
                 </Section>
                 <CallbackForm />

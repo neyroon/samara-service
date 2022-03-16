@@ -14,7 +14,7 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ text }) => {
         <Container>
             <ListContainer>
                 <ListElement>
-                    <StyledLink to="/">Главная</StyledLink>
+                    <StyledLink to='/'>Главная</StyledLink>
                 </ListElement>
                 <ListElementLast>
                     <ListElementLastText>{text}</ListElementLastText>

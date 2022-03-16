@@ -31,8 +31,8 @@ const advantages = [
 export const Main = () => {
     return (
         <>
-            <StyledHeader backgroundColor="#fceccc">
-                <Menu textColor="#000" />
+            <StyledHeader backgroundColor='#fceccc'>
+                <Menu textColor='#000' />
                 <Hero>
                     <StyledTitle>Ремонт бытовой техники в Самаре</StyledTitle>
                     <Advantages>
@@ -45,25 +45,17 @@ export const Main = () => {
             <MainContainer>
                 <Title>Какое у вас оборудование?</Title>
                 <EquipmentContainer>
-                    <Equipment to="/">
+                    <Equipment to='/'>
                         <EquipmentTitle>Cтиральная машина</EquipmentTitle>
-                        <img
-                            src={Washer}
-                            alt="Cтиральная машина"
-                            loading="lazy"
-                        />
+                        <img src={Washer} alt='Cтиральная машина' loading='lazy' />
                     </Equipment>
-                    <Equipment to="/">
+                    <Equipment to='/'>
                         <EquipmentTitle>Посудомоечная машина</EquipmentTitle>
-                        <img
-                            src={DishWasher}
-                            alt="Посудомоечная машина"
-                            loading="lazy"
-                        />
+                        <img src={DishWasher} alt='Посудомоечная машина' loading='lazy' />
                     </Equipment>
-                    <Equipment to="/">
+                    <Equipment to='/'>
                         <EquipmentTitle>Холодильник</EquipmentTitle>
-                        <img src={Fridge} alt="Холодильник" loading="lazy" />
+                        <img src={Fridge} alt='Холодильник' loading='lazy' />
                     </Equipment>
                 </EquipmentContainer>
             </MainContainer>

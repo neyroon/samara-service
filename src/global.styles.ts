@@ -20,3 +20,16 @@ export const GlobalStyles = createGlobalStyle`
         padding: 0;
     }
 `;
+
+export const Animations = createGlobalStyle`
+    @keyframes fadeInText {
+        from{
+            transform:translateY(-50px);
+            opacity:0;
+        }
+        to{
+            transform:translateY(0);
+            opacity:1;
+        }
+    }
+`;

@@ -50,6 +50,7 @@ export const StyledTitle = styled.h1`
     margin: 15px 0 40px;
     font-size: 30px;
     line-height: 1.25;
+    animation: fadeInText 0.6s ease-out;
 
     @media only screen and (min-width: ${breakpoints.MOBILE_M}px) {
         font-size: 35px;
@@ -62,6 +63,14 @@ export const StyledTitle = styled.h1`
 `;
 
 export const Advantages = styled.div`
+    & :nth-child(2) {
+        animation-delay: 1.2s;
+    }
+
+    & :last-child {
+        animation-delay: 1.8s;
+    }
+
     @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
         display: flex;
         flex-wrap: wrap;

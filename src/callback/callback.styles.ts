@@ -103,8 +103,7 @@ export const Button = styled.button`
     border: 2px solid transparent;
     color: #fff;
     font-size: 18px;
-    transition: background-color 0.3s ease-out, border-color 0.3s ease-out,
-        color 0.3s ease-out;
+    transition: background-color 0.3s ease-out, border-color 0.3s ease-out, color 0.3s ease-out;
 
     @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
         width: calc(50% - 10px);

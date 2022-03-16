@@ -27,6 +27,7 @@ export const PhoneLink = styled(Phone)<{ color: string }>`
 export const PageTitle = styled.h1`
     margin: 10px 0 40px;
     font-size: 40px;
+    animation: fadeInText 0.6s ease-out;
 
     @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
         font-size: 48px;
@@ -40,6 +41,10 @@ export const PageTitle = styled.h1`
 
 export const PageParagraph = styled.p`
     margin: 0;
+    animation: fadeInText 0.6s ease-out 0.6s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+
     @media only screen and (min-width: ${breakpoints.DESKTOP_M}px) {
         font-size: 28px;
     }

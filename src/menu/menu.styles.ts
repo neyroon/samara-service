@@ -138,8 +138,7 @@ export const BurgerElement = styled.div<{ color: string }>`
             background-color: ${color};
         `}
     border-radius: 12px;
-    transition: transform 0.6s ease, opacity 0.3s linear,
-        background-color 0.1s ease 0.5s;
+    transition: transform 0.6s ease, opacity 0.3s linear, background-color 0.1s ease 0.5s;
 `;
 
 export const BurgerElementTop = styled(BurgerElement)`
@@ -164,7 +163,9 @@ export const BodyWithBurger = createGlobalStyle`
     }
 `;
 
-export const BurgerContainer = styled.div<{ active: boolean }>`
+export const BurgerContainer = styled.div<{
+    active: boolean;
+}>`
     position: relative;
     z-index: 2;
     width: 28px;
@@ -190,7 +191,9 @@ export const BurgerContainer = styled.div<{ active: boolean }>`
         `}
 `;
 
-export const NavigationMobile = styled.div<{ show: boolean }>`
+export const NavigationMobile = styled.div<{
+    show: boolean;
+}>`
     position: absolute;
     z-index: 1;
     top: 0;

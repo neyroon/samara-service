@@ -32,7 +32,9 @@ export const StyledSpan = styled.span<{ fontSize: string }>`
     `}
 `;
 
-export const StyledLink = styled(Link)<{ fontSize: string }>`
+export const StyledLink = styled(Link)<{
+    fontSize: string;
+}>`
     ${({ fontSize }) => css`
         font-size: ${fontSize};
     `}

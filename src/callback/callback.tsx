@@ -15,7 +15,7 @@ export const CallbackForm = () => {
                 <WidthContainer>
                     <Title>Заказать обратный звонок</Title>
                     <Form>
-                        <PhoneInput placeholder="+7" />
+                        <PhoneInput placeholder='+7' />
                         <Button>Обратный звонок</Button>
                     </Form>
                 </WidthContainer>

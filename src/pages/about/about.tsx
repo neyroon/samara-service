@@ -29,83 +29,55 @@ export const About = () => {
     return (
         <>
             <StyledHeader>
-                <Menu textColor="#fff" burgerColor="#fff" />
+                <Menu textColor='#fff' burgerColor='#fff' />
                 <Hero>
-                    <Breadcrumbs text="О компании" />
+                    <Breadcrumbs text='О компании' />
                     <PageTitle>О компании</PageTitle>
                     <PageParagraph>
-                        Мы занимаемся ремонтом бытовой техники с 2010 года и
-                        знаем о ней все.
+                        Мы занимаемся ремонтом бытовой техники с 2010 года и знаем о ней все.
                     </PageParagraph>
                 </Hero>
             </StyledHeader>
             <MainContainer>
                 <Title>
-                    За это время мы выстроили все бизнес-процессы так, чтобы
-                    клиентам было удобно:
+                    За это время мы выстроили все бизнес-процессы так, чтобы клиентам было удобно:
                 </Title>
                 <Grid>
                     <AboutElement>
                         <Text>
-                            Равномерное распределение мастеров по городу и
-                            отлаженные внутренние коммуникации позволяют нашим
-                            мастерам приезжать к клиентам в течение часа.
+                            Равномерное распределение мастеров по городу и отлаженные внутренние
+                            коммуникации позволяют нашим мастерам приезжать к клиентам в течение
+                            часа.
                         </Text>
-                        <img src={PhoneImage} alt="Телефон" loading="lazy" />
+                        <img src={PhoneImage} alt='Телефон' loading='lazy' />
                     </AboutElement>
                     <AboutElement>
                         <Text>
-                            Договора с крупными поставщиками дают возможность
-                            приобретать комплектующие по цене ниже рынка и
-                            снизить стоимость ремонта.
+                            Договора с крупными поставщиками дают возможность приобретать
+                            комплектующие по цене ниже рынка и снизить стоимость ремонта.
                         </Text>
-                        <img
-                            src={HandshakeImage}
-                            alt="Телефон"
-                            loading="lazy"
-                        />
+                        <img src={HandshakeImage} alt='Телефон' loading='lazy' />
                     </AboutElement>
                     <AboutElement>
                         <Text>
-                            Регулярные аттестации сотрудников допускают к работе
-                            только компетентных мастеров и снижают до минимума
-                            обращения по гарантии.
+                            Регулярные аттестации сотрудников допускают к работе только компетентных
+                            мастеров и снижают до минимума обращения по гарантии.
                         </Text>
-                        <img
-                            src={AttestationImage}
-                            alt="Аттестация"
-                            loading="lazy"
-                        />
+                        <img src={AttestationImage} alt='Аттестация' loading='lazy' />
                     </AboutElement>
                     {!isMobile && (
                         <AboutElementImagesGrid>
                             <ImageContainer>
-                                <Image
-                                    src={GridFirst}
-                                    alt="1 фото"
-                                    loading="lazy"
-                                />
+                                <Image src={GridFirst} alt='1 фото' loading='lazy' />
                             </ImageContainer>
                             <ImageContainer>
-                                <Image
-                                    src={GridSecond}
-                                    alt="2 фото"
-                                    loading="lazy"
-                                />
+                                <Image src={GridSecond} alt='2 фото' loading='lazy' />
                             </ImageContainer>
                             <ImageContainer>
-                                <Image
-                                    src={GridThird}
-                                    alt="3 фото"
-                                    loading="lazy"
-                                />
+                                <Image src={GridThird} alt='3 фото' loading='lazy' />
                             </ImageContainer>
                             <ImageContainer>
-                                <Image
-                                    src={GridFourth}
-                                    alt="4 фото"
-                                    loading="lazy"
-                                />
+                                <Image src={GridFourth} alt='4 фото' loading='lazy' />
                             </ImageContainer>
                         </AboutElementImagesGrid>
                     )}
