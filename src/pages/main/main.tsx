@@ -45,15 +45,15 @@ export const Main = () => {
             <MainContainer>
                 <Title>Какое у вас оборудование?</Title>
                 <EquipmentContainer>
-                    <Equipment to='/'>
+                    <Equipment to='/washer'>
                         <EquipmentTitle>Cтиральная машина</EquipmentTitle>
                         <img src={Washer} alt='Cтиральная машина' loading='lazy' />
                     </Equipment>
-                    <Equipment to='/'>
+                    <Equipment to='/dishwasher'>
                         <EquipmentTitle>Посудомоечная машина</EquipmentTitle>
                         <img src={DishWasher} alt='Посудомоечная машина' loading='lazy' />
                     </Equipment>
-                    <Equipment to='/'>
+                    <Equipment to='/fridge'>
                         <EquipmentTitle>Холодильник</EquipmentTitle>
                         <img src={Fridge} alt='Холодильник' loading='lazy' />
                     </Equipment>

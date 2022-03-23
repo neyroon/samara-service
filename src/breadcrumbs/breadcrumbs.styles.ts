@@ -1,6 +1,7 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link } from 'react-router-dom';
 import BreadcrumbArrowWhite from '../assets/breadcrumb-arrow-white.png';
+import BreadcrumbArrow from '../assets/breadcrumb-arrow.png';
 import { breakpoints } from '../constants';
 
 export const Container = styled.div`
@@ -23,7 +24,7 @@ export const ListContainer = styled.ul`
     list-style: none;
 `;
 
-export const ListElement = styled.li`
+export const ListElement = styled.li<{ isMain: boolean }>`
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -34,19 +35,40 @@ export const ListElement = styled.li`
         width: 17px;
         height: 6px;
         margin: 0 10px;
-        background: url(${BreadcrumbArrowWhite}) center center no-repeat;
+        ${({ isMain }) =>
+            isMain
+                ? css`
+                      background: url(${BreadcrumbArrow}) center center no-repeat;
+                  `
+                : css`
+                      background: url(${BreadcrumbArrowWhite}) center center no-repeat;
+                  `}
     }
 `;
 
-export const StyledLink = styled(Link)`
-    color: #fff;
+export const StyledLink = styled(Link)<{ isMain: boolean }>`
+    ${({ isMain }) =>
+        isMain
+            ? css`
+                  color: #9e9e9e;
+              `
+            : css`
+                  color: #fff;
+              `}
     text-decoration: none;
     transition: border-bottom-color 0.3s;
     border-bottom: 1px solid transparent;
 
     &:hover,
     &:focus {
-        border-bottom: 1px solid #fff;
+        ${({ isMain }) =>
+            isMain
+                ? css`
+                      border-bottom: 1px solid #9e9e9e;
+                  `
+                : css`
+                      border-bottom: 1px solid #fff;
+                  `}
     }
 `;
 
@@ -56,6 +78,13 @@ export const ListElementLast = styled.li`
     font-size: 16px;
 `;
 
-export const ListElementLastText = styled.span`
-    color: #9e9e9e;
+export const ListElementLastText = styled.span<{ isMain: boolean }>`
+    ${({ isMain }) =>
+        isMain
+            ? css`
+                  color: #4d4d4d;
+              `
+            : css`
+                  color: #9e9e9e;
+              `}
 `;

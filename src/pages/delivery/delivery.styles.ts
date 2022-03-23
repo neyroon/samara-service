@@ -112,7 +112,7 @@ export const DeliveryTitle = styled.h3`
     }
 `;
 
-export const DeliveryText = styled.div`
+export const DeliveryText = styled.span`
     font-size: 18px;
 
     @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
@@ -122,6 +122,17 @@ export const DeliveryText = styled.div`
     @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
         font-size: 24px;
     }
+`;
+
+export const DownText = styled(DeliveryText)`
+    max-width: 170px;
+    font-style: italic;
+    border-bottom: 1px solid #000;
+`;
+
+export const HiddenText = styled.div`
+    margin-top: 10px;
+    max-width: 170px;
 `;
 
 export const Hero = styled.div`

@@ -9,15 +9,17 @@ import {
 } from './breadcrumbs.styles';
 import { BreadcrumbsProps } from './types';
 
-export const Breadcrumbs: FC<BreadcrumbsProps> = ({ text }) => {
+export const Breadcrumbs: FC<BreadcrumbsProps> = ({ text, isMain = false }) => {
     return (
         <Container>
             <ListContainer>
-                <ListElement>
-                    <StyledLink to='/'>Главная</StyledLink>
+                <ListElement isMain>
+                    <StyledLink to='/' isMain>
+                        Главная
+                    </StyledLink>
                 </ListElement>
                 <ListElementLast>
-                    <ListElementLastText>{text}</ListElementLastText>
+                    <ListElementLastText isMain>{text}</ListElementLastText>
                 </ListElementLast>
             </ListContainer>
         </Container>

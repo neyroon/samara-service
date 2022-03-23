@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Breadcrumbs } from '../../breadcrumbs';
 import { CallbackForm } from '../../callback';
 import { MainContainer, PageParagraph, PageTitle, UnderlineText } from '../../common.styles';
@@ -7,6 +8,8 @@ import {
     DeliveryElementsContainer,
     StyledHeader,
     DeliveryText,
+    DownText,
+    HiddenText,
     DeliveryTitle,
     DeliveryElementMap,
     DeliveryElementTime,
@@ -15,6 +18,7 @@ import {
 } from './delivery.styles';
 
 export const Delivery = () => {
+    const [textVisible, setTextVisible] = useState(false);
     return (
         <>
             <StyledHeader>
@@ -45,7 +49,14 @@ export const Delivery = () => {
                     </DeliveryElementTime>
                     <DeliveryElementPig>
                         <DeliveryTitle>Сколько стоит:</DeliveryTitle>
-                        <DeliveryText>Выезд бесплатен</DeliveryText>
+                        <DownText onClick={() => setTextVisible(!textVisible)}>Бесплатно</DownText>
+                        {textVisible && (
+                            <HiddenText>
+                                При ремонте выезд не оплачивается, но если ремонт не целесообразен
+                                или вы по каким либо причинам передумали чинить, то цена услуги
+                                составит 799 руб
+                            </HiddenText>
+                        )}
                     </DeliveryElementPig>
                 </DeliveryElementsContainer>
                 <CallbackForm />

@@ -35,7 +35,7 @@ export const useIsMobile = (size = breakpoints.MOBILE_L) => {
     const windowSize = useWindowSize();
     const [isMobile, setIsMobile] = useState(windowSize.width < size);
 
-    useEffect(() => setIsMobile(windowSize.width < size), [windowSize.width]);
+    useEffect(() => setIsMobile(windowSize.width < size), [windowSize.width, size]);
 
     return isMobile;
 };
