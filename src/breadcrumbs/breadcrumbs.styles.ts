@@ -24,7 +24,7 @@ export const ListContainer = styled.ul`
     list-style: none;
 `;
 
-export const ListElement = styled.li<{ isMain: boolean }>`
+export const ListElement = styled.li<{ $isMain: boolean }>`
     display: flex;
     align-items: center;
     font-size: 16px;
@@ -35,8 +35,8 @@ export const ListElement = styled.li<{ isMain: boolean }>`
         width: 17px;
         height: 6px;
         margin: 0 10px;
-        ${({ isMain }) =>
-            isMain
+        ${({ $isMain }) =>
+            $isMain
                 ? css`
                       background: url(${BreadcrumbArrow}) center center no-repeat;
                   `
@@ -46,9 +46,9 @@ export const ListElement = styled.li<{ isMain: boolean }>`
     }
 `;
 
-export const StyledLink = styled(Link)<{ isMain: boolean }>`
-    ${({ isMain }) =>
-        isMain
+export const StyledLink = styled(Link)<{ $isMain: boolean }>`
+    ${({ $isMain }) =>
+        $isMain
             ? css`
                   color: #9e9e9e;
               `
@@ -61,8 +61,8 @@ export const StyledLink = styled(Link)<{ isMain: boolean }>`
 
     &:hover,
     &:focus {
-        ${({ isMain }) =>
-            isMain
+        ${({ $isMain }) =>
+            $isMain
                 ? css`
                       border-bottom: 1px solid #9e9e9e;
                   `
@@ -78,9 +78,9 @@ export const ListElementLast = styled.li`
     font-size: 16px;
 `;
 
-export const ListElementLastText = styled.span<{ isMain: boolean }>`
-    ${({ isMain }) =>
-        isMain
+export const ListElementLastText = styled.span<{ $isMain: boolean }>`
+    ${({ $isMain }) =>
+        $isMain
             ? css`
                   color: #4d4d4d;
               `

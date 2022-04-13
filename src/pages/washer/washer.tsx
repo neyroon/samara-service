@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Breadcrumbs } from '../../breadcrumbs';
 import { MainContainer, EquipmentTitle, UnderlineText } from '../../common.styles';
 import { Footer } from '../../footer';
@@ -17,8 +17,22 @@ import {
     QuizListItem,
     StyledUnderlineText,
     StyledImage,
+    QuizCallBackForm,
+    QuizCallbackParagraph,
+    QuizCallback,
+    Features,
+    FeatureContainer,
+    FeatureParagraph,
+    FeatureImage,
 } from './washer.styles';
 import WasherQuiz from '../../assets/washer-quiz.png';
+import FeatureOne from '../../assets/feature-1.png';
+import FeatureTwo from '../../assets/feature-2.png';
+import FeatureThree from '../../assets/feature-3.png';
+import { CallBackButton, CallBackPhoneInput, CallbackFormContainer } from '../../callback';
+import { Solutions } from '../../solutions';
+import { CALLBACK_API_URL } from '../../constants';
+import { solutions } from './price';
 
 const quizItemsFirst: QuizItem[] = [
     { title: 'Течет' },
@@ -38,14 +52,35 @@ const quizItemsSecond: QuizItem[] = [
     { title: 'Не знаю' },
 ];
 
-const quizItemsThird: QuizItem[] = [
-    { title: 'Самара' },
-    { title: 'Ближайшая Самарская область(10 км от Самары)' },
-];
+const quizItemsThird: QuizItem[] = [{ title: 'Самара' }];
 
 export const Washer = () => {
     const [step, setStep] = useState(1);
     const [quizInformation, setQuizInformation] = useState({ fault: '', type: '', city: '' });
+    const [phone, setPhone] = useState('+7');
+    const [unmaskedPhone, setUnmaskedPhone] = useState('');
+    const [error, setError] = useState(false);
+
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    }, []);
+
+    const onCallbackClick = () => {
+        async function fetchInformation() {
+            const response = await fetch(CALLBACK_API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ ...quizInformation, phone: unmaskedPhone }),
+            });
+            setError(!(response.status === 200));
+        }
+        fetchInformation();
+    };
 
     const onQuizItemFirstBlockClick = (quizItem: QuizItem) => {
         setQuizInformation({ ...quizInformation, fault: quizItem.title });
@@ -53,13 +88,18 @@ export const Washer = () => {
     };
 
     const onQuizItemSecondBlockClick = (quizItem: QuizItem) => {
-        setQuizInformation({ ...quizInformation, type: quizItem.title });
+        setQuizInformation({ ...quizInformation, type: `Стиральная машина: ${quizItem.title}` });
         setStep(step + 1);
     };
 
     const onQuizItemThirdBlockClick = (quizItem: QuizItem) => {
         setQuizInformation({ ...quizInformation, city: quizItem.title });
         setStep(step + 1);
+    };
+
+    const handleInputChange = (phone: string, unmaskedPhone: string) => {
+        setPhone(phone);
+        setUnmaskedPhone(unmaskedPhone);
     };
 
     return (
@@ -90,6 +130,7 @@ export const Washer = () => {
                             <QuizList>
                                 {quizItemsFirst.map((quizItem) => (
                                     <QuizListItem
+                                        key={quizItem.title}
                                         onClick={() => onQuizItemFirstBlockClick(quizItem)}>
                                         {quizItem.title}
                                     </QuizListItem>
@@ -103,6 +144,7 @@ export const Washer = () => {
                             <QuizList>
                                 {quizItemsSecond.map((quizItem) => (
                                     <QuizListItem
+                                        key={quizItem.title}
                                         onClick={() => onQuizItemSecondBlockClick(quizItem)}>
                                         {quizItem.title}
                                     </QuizListItem>
@@ -116,6 +158,7 @@ export const Washer = () => {
                             <QuizList>
                                 {quizItemsThird.map((quizItem) => (
                                     <QuizListItem
+                                        key={quizItem.title}
                                         onClick={() => onQuizItemThirdBlockClick(quizItem)}>
                                         {quizItem.title}
                                     </QuizListItem>
@@ -125,11 +168,56 @@ export const Washer = () => {
                     )}
                     {step === 4 && (
                         <>
-                            <Title>
-                                Спасибо! Мы закрепили за вами{' '}
-                                <StyledUnderlineText>скидку 5%</StyledUnderlineText> на ремонт
-                            </Title>
-                            <StyledImage src={WasherQuiz} loading='lazy' />
+                            {!error && (
+                                <>
+                                    <Title>
+                                        Спасибо! Мы закрепили за вами{' '}
+                                        <StyledUnderlineText>скидку 5%</StyledUnderlineText> на
+                                        ремонт
+                                    </Title>
+                                    <QuizCallback>
+                                        <StyledImage src={WasherQuiz} loading='lazy' />
+                                        <QuizCallBackForm>
+                                            <QuizCallbackParagraph>
+                                                Оставьте, пожалуйста, номер телефона, и мы
+                                                перезвоним вам в течение 5 минут
+                                            </QuizCallbackParagraph>
+                                            <CallbackFormContainer>
+                                                <CallBackPhoneInput
+                                                    value={phone}
+                                                    onChange={handleInputChange}
+                                                />
+                                                <CallBackButton onClick={onCallbackClick}>
+                                                    Обратный звонок
+                                                </CallBackButton>
+                                            </CallbackFormContainer>
+                                        </QuizCallBackForm>
+                                    </QuizCallback>
+                                    <Solutions solutions={solutions} />
+                                    <Features>
+                                        <FeatureContainer>
+                                            <FeatureParagraph>
+                                                Ремонт с выездом{' '}
+                                                <UnderlineText>на дом</UnderlineText>
+                                            </FeatureParagraph>
+                                            <FeatureImage src={FeatureOne} loading='lazy' />
+                                        </FeatureContainer>
+                                        <FeatureContainer>
+                                            <FeatureParagraph>
+                                                Выезд инженера и диагностика{' '}
+                                                <UnderlineText>бесплатно</UnderlineText>
+                                            </FeatureParagraph>
+                                            <FeatureImage src={FeatureTwo} loading='lazy' />
+                                        </FeatureContainer>
+                                        <FeatureContainer>
+                                            <FeatureParagraph>
+                                                Гарантия <UnderlineText>1 год</UnderlineText>
+                                            </FeatureParagraph>
+                                            <FeatureImage src={FeatureThree} loading='lazy' />
+                                        </FeatureContainer>
+                                    </Features>
+                                </>
+                            )}
                         </>
                     )}
                 </Quiz>

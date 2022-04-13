@@ -34,7 +34,7 @@ export const About = () => {
                     <Breadcrumbs text='О компании' />
                     <PageTitle>О компании</PageTitle>
                     <PageParagraph>
-                        Мы занимаемся ремонтом бытовой техники с 2010 года и знаем о ней все.
+                        Мы занимаемся ремонтом бытовой техники и знаем о ней все.
                     </PageParagraph>
                 </Hero>
             </StyledHeader>

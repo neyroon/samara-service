@@ -6,3 +6,5 @@ export const breakpoints = {
     DESKTOP_S: 1024,
     DESKTOP_M: 1440,
 };
+
+export const CALLBACK_API_URL = 'http://867519-cl22206.tmweb.ru/callback';

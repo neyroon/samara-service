@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Header } from '../../header';
 import HeroDelivery from '../../assets/hero-delivery.png';
 import HeroDeliveryM from '../../assets/hero-delivery-m.png';
-import Map from '../../assets/map.png';
-import MapM from '../../assets/map-m.png';
 import TimeHand from '../../assets/time-hand.png';
 import TimeHandM from '../../assets/time-hand-m.png';
 import Pig from '../../assets/rich-pig.png';
@@ -49,7 +47,6 @@ export const DeliveryElement = styled.div`
 
 export const DeliveryElementMap = styled(DeliveryElement)`
     padding: 50px 40px 330px;
-    background: #fff url(${MapM}) center bottom 30px no-repeat;
 
     @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
         width: calc(40% - 15px);
@@ -59,7 +56,6 @@ export const DeliveryElementMap = styled(DeliveryElement)`
 
     @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
         padding: 65px 55px 440px;
-        background: #fff url(${Map}) center bottom 40px no-repeat;
     }
 `;
 

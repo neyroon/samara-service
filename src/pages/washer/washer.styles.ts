@@ -135,3 +135,79 @@ export const StyledImage = styled.img`
         border-radius: 32px;
     }
 `;
+
+export const QuizCallback = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 35px;
+
+    @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
+        margin: 0 0 70px;
+    }
+`;
+
+export const QuizCallBackForm = styled.div`
+    padding: 30px 20px;
+    background: #1b5b87;
+    border-radius: 12px;
+
+    @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
+        display: flex;
+        align-items: center;
+        border-radius: 32px;
+    }
+`;
+
+export const QuizCallbackParagraph = styled.p`
+    margin: 0 0 30px;
+    font-size: 18px;
+    color: #fff;
+
+    @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
+        max-width: 325px;
+        margin: 0 15px 0 0;
+        font-size: 20px;
+    }
+`;
+
+export const Features = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-size: 18px;
+
+    @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
+        flex-direction: row;
+    }
+
+    @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
+        font-size: 20px;
+    }
+`;
+
+export const FeatureContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    background: #fceccc;
+    border-radius: 12px;
+    margin: 0 0 15px;
+
+    @media only screen and (min-width: ${breakpoints.MOBILE_L}px) {
+        justify-content: space-between;
+        width: calc(33.33% - 20px);
+        margin: 0 20px 20px 0;
+    }
+
+    @media only screen and (min-width: ${breakpoints.DESKTOP_S}px) {
+        width: calc(33.33% - 30px);
+        margin: 0 30px 40px 0;
+    }
+`;
+
+export const FeatureParagraph = styled.p`
+    padding: 25px 30px 5px;
+`;
+
+export const FeatureImage = styled.img`
+    max-width: 100%;
+    margin: 0 0 0 auto;
+`;

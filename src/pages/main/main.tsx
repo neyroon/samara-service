@@ -37,7 +37,7 @@ export const Main = () => {
                     <StyledTitle>Ремонт бытовой техники в Самаре</StyledTitle>
                     <Advantages>
                         {advantages.map((advantage) => (
-                            <Advantage title={advantage.title} />
+                            <Advantage key={advantage.title} title={advantage.title} />
                         ))}
                     </Advantages>
                 </Hero>

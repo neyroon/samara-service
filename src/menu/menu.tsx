@@ -73,7 +73,7 @@ export const Menu: FC<MenuProps> = ({ textColor = '#fff', burgerColor = '#1a1a1a
                 <LogoNavigationLink color={textColor} to='/'>
                     <StyledImage src={Logo} alt='Логотип' loading='lazy' />
                     <LogoTextContainer>
-                        Работает
+                        tls-smr
                         <LogoTextSmall>Ремонт техники</LogoTextSmall>
                     </LogoTextContainer>
                 </LogoNavigationLink>
@@ -101,7 +101,7 @@ export const Menu: FC<MenuProps> = ({ textColor = '#fff', burgerColor = '#1a1a1a
             ) : (
                 <FlexContainer>
                     <PhoneLink color={textColor} />
-                    <StyledSpan color={textColor}>Пн-Вс: 7:00-24:00</StyledSpan>
+                    <StyledSpan color={textColor}>Пн-Вс: 8:00-22:00</StyledSpan>
                 </FlexContainer>
             )}
         </MainContainer>

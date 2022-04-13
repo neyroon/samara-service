@@ -13,13 +13,13 @@ export const Breadcrumbs: FC<BreadcrumbsProps> = ({ text, isMain = false }) => {
     return (
         <Container>
             <ListContainer>
-                <ListElement isMain>
-                    <StyledLink to='/' isMain>
+                <ListElement $isMain={isMain}>
+                    <StyledLink to='/' $isMain={isMain}>
                         Главная
                     </StyledLink>
                 </ListElement>
                 <ListElementLast>
-                    <ListElementLastText isMain>{text}</ListElementLastText>
+                    <ListElementLastText $isMain={isMain}>{text}</ListElementLastText>
                 </ListElementLast>
             </ListContainer>
         </Container>
